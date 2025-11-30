@@ -1,0 +1,241 @@
+.team-calendar {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.page-header h1 {
+  color: #2c3e50;
+}
+
+.calendar-controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.calendar-controls select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: white;
+}
+
+.calendar-view {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.calendar-day-header {
+  text-align: center;
+  font-weight: 600;
+  color: #555;
+  padding: 0.5rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-height: 80px;
+}
+
+.calendar-day:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.02);
+}
+
+.calendar-day.empty {
+  border: none;
+  cursor: default;
+}
+
+.calendar-day.today {
+  border: 2px solid #3498db;
+  font-weight: 700;
+}
+
+.day-number {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2c3e50;
+  align-self: flex-start;
+}
+
+.day-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.stat-dot {
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.25rem;
+}
+
+.calendar-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.employee-summary {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.employee-summary h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.summary-table-container {
+  overflow-x: auto;
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.summary-table thead {
+  background-color: #f8f9fa;
+}
+
+.summary-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.summary-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.summary-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.stat-present {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.stat-absent {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.stat-late {
+  color: #f39c12;
+  font-weight: 600;
+}
+
+.stat-halfday {
+  color: #e67e22;
+  font-weight: 600;
+}
+
+.loading,
+.no-data {
+  text-align: center;
+  padding: 3rem;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .calendar-grid {
+    gap: 0.25rem;
+  }
+
+  .calendar-day {
+    min-height: 60px;
+    padding: 0.25rem;
+  }
+
+  .day-number {
+    font-size: 0.8rem;
+  }
+
+  .stat-dot {
+    min-width: 16px;
+    height: 16px;
+    font-size: 0.6rem;
+  }
+
+  .summary-table {
+    font-size: 0.9rem;
+  }
+
+  .summary-table th,
+  .summary-table td {
+    padding: 0.5rem;
+  }
+}
+
